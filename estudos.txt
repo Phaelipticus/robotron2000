@@ -72,6 +72,79 @@ DATA ATRIBUTES
                 <li data-cor="rosa" data-tipo="tinta-exterior"  onclick="mudaCores(this)" class="item">Tinta rosa</li>
             </ul>
 
+OBJETOS JAVASCRIPT E SUAS PROPRIEDADES
+    var livro = { 
+        titulo: "Cangaceiro JavaScript",  
+        autor: "Flávio Almeida", 
+        genero: "Front-end", 
+        editora: "Casa do código", 
+        preco:31,92
+        }
+
+    Acessando a propriedade do objeto
+        livro.preco 
+        O resultado será 31,92
+
+
+    Também podemos inserir listas em objeto JavaScript
+
+        var livros = [
+            {titulo: "Cangaceiro JavaScript",  
+            autor: "Flávio Almeida", 
+            genero: "Front-end", 
+            editora: "Casa do código", 
+            preco:31.92
+        },
+            {titulo: "Cangaceiro JavaScript",  
+            autor: "Flávio Almeida", 
+            genero: "Front-end", 
+            editora: "Casa do código", 
+            preco:21.89
+        },
+
+            {titulo: "Cangaceiro JavaScript",  
+            autor: "Flávio Almeida", 
+            genero: "Front-end", 
+            editora: "Casa do código", 
+            preco:31.92
+        },
+    ]
+
+    Acessando a propriedade do array do objeto
+        console.log(livros[0]["autor"])
+        console.log(livros[0].autor)
+        O resultado nos dois casos será Flávio Almeida
+
+    Alterando a propriedade do objeto  
+        livros[1].genero = "UX e Design"
+        livros[0].estoque = "11 unidades"
+
+    Deletando a propriedade ou os valores da propriedade do objeto
+        delete livros[1] ->E ao consultar digitando livros[1] será retornado: undefined.
+        delete livros[1].autor
+
+
+    USANDO THIS
+        console.log(this === window); // true
+
+        Com this é possível também acessar um objeto e suas propriedades:
+
+        var livros = {
+            titulo: "Cangaceiro JavaScript",  
+            autor: "Flávio Almeida", 
+            genero: "Front-end", 
+            editora: "Casa do código", 
+            preco: 31.92,
+            chamaLivro: function() {
+                return this.autor;
+            }
+        }
+        console.log('O autor do livro se chama ' + livros.chamaLivro())
+
+        No exemplo acima, o this é uma representação do objeto livros.
+
+        Alterando a propriedade usando THIS
+            this.autor = "Pedro Marins";
 
 
 ----------

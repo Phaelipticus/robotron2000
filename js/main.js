@@ -2,6 +2,20 @@ const robotron = document.querySelector('#robotron');
 //const controle = document.querySelectorAll('.controle-ajuste')
 const controle = document.querySelectorAll('[data-controle]')
 const estatisticas = document.querySelectorAll('[data-estatistica]')
+const botaoCorRobotron = document.querySelector('#cor-robotron')
+const cores = ["pink","black","blue","white","yellow","red"]
+let count = 0
+//console.log(botaoCorRobotron)
+
+botaoCorRobotron.addEventListener("click", () => {
+    if(count === 6){
+        count = 0
+    }
+    robotron.src = "img/robotron-" + cores[count] + ".png"
+    count += 1
+})
+
+
 
 //no console podemos acessar a variavel pecas e seus subniveis
 //pecas.braco.energia
