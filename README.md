@@ -2,4 +2,4 @@
 
 EXERCÍCIOS
 
-- 1) Alterar o texto da tag p
+- 1- Alterar o texto da tag p
