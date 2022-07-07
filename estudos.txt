@@ -1,17 +1,98 @@
+https://developer.mozilla.org/en-US/  -> documentação JavaScript do Mozzila
+
+
 DOM
     O DOM é uma interface de linguagem neutra que permite que o documento HTML seja atualizado dinamicamente.
     O DOM permite atualizar, excluir e modificar dinamicamente elementos do documento HTML!
+
+
+ARROW FUNCTION 
+    É o uso do => ou invés de function para representar uma funcão anonima.
+
+    robotron.addEventListener("click", (evento) => {
+    console.log('Cliquei no robo');
+    console.log(evento)
+});    
+
+
+HOISTING NO JAVASCRIPT
+    Vamos analisar este código de function declaration, e o que retorna:
+
+    console.log(soma(2, 5))
+    function soma(a, b) {
+        return a + b
+    }
+
+    Este código retorna o valor: 7
+    Repare que a função consegue ser chamada antes mesmo de ter sido declarada. Hoisting é o termo que explica 
+    essa situação, em português ele significa “içamento”, ou “elevação” e foi citado pela primeira vez no 
+    ECMAScript® 2015 Language Specification. 
+    
+    O Hoisting permite que você execute funções antes das suas declarações. Na prática, inicialmente as declarações 
+    de funções são colocadas na memória durante a fase de compilação e, mesmo assim, permanecem no mesmo lugar que estão digitadas.
+    A razão pela qual o código anterior funciona é que os mecanismos JavaScript movem a função soma para o início do 
+    escopo, como ilustra o código abaixo:
+
+    function soma(a,b){
+        return a + b
+    }
+    console.log(soma(2,5))
+
+    A utilização de Hoisting em var não é indicada, pois a variável criada é elevada para o escopo, mas sem o seu valor, 
+    e com isso, retorna valor undefined.
+
+    O comportamento é parecido utilizando também var function:
+
+    function testaHoisting() {
+        console.log(‘testaHoisting’, alura)
+        var alura = ‘cursos’
+    }
+
+    Este código retorna: undefined.
+
+
+DATA ATRIBUTES 
+    São utilizados para guardar valores em elementos HTML. Esses valores podem ser manipulados através do JavaScript. 
+    Também é possível estilizar elementos HTML com CSS referenciando o seu data-attribute
+
+        <buttom class="controle-ajuste"  data-controle="+">+</buttom>
+            se mudarem o valor '+' e colocarem 'mais', o javascript não vai mais identificar.
+            então utilizamos o data-controle e referenciamos ele no JS para identificar o botão +
+
+        <input type="text" class="controle-contador" value="00" data-contador>
+            Não preciso colocar nenhum valor, posso apenas colocar o nome: data-contador
+
+        Outro Exemplo - com dois data atributes: data-cor e data-tipo
+            <ul id="lista">
+                <li data-cor="laranja" data-tipo="tinta-exterior" onclick="mudaCores(this)" class="item">Tinta laranja</li>
+                <li data-cor="vermelho" data-tipo="tinta-interior"  onclick="mudaCores(this)" class="item">Tinta vermelha</li>
+                <li data-cor="branco" data-tipo="tinta-interior"  onclick="mudaCores(this)" class="item">Tinta branca</li>
+                <li data-cor="amarelo" data-tipo="tinta-exterior"  onclick="mudaCores(this)" class="item">Tinta amarelo</li>
+                <li data-cor="rosa" data-tipo="tinta-exterior"  onclick="mudaCores(this)" class="item">Tinta rosa</li>
+            </ul>
+
+
+
+----------
+ COMANDOS
+----------
+
+SPLICE
+    splice(1,1) remove da posição 1 do array, 1 elemento.
+
 
 MÉTODOS PARA SELECIONAR ELEMENTOS NO HTML
     document.getElementByID(id) - Selecionar um elemento pelo ID.
     document.getElementsByTagName(name) - Selecionar um elemento pelo nome.
     document.getElementsByClassName(name) - Selecionar um elemento pelo nome da classe.
+
     
 PROPRIEDADES E MÉTODOS PARA ALTERAR ELEMENTOS NO HTML    
     element.innerHTML - Esta propriedade obtém ou altera qualquer elemento no HTML, inclusive tags.
     element.innerText - Esta propriedade permite inserir textos no HTML.
     element.attribute - Esta propriedade altera o valor de um elemento HTML
     element.setAttribute(atributo, valor) - Este método altera o valor de um atributo de um elemento HTML.
+
 
 ADICIONANDO E EXCLUINDO ELEMENTOS
     document.write() - Escreve no fluxo de saída do HTML.
